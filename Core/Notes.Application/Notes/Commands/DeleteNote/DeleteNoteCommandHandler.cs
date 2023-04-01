@@ -28,6 +28,7 @@ namespace Notes.Application.Notes.Commands.DeleteNote
 
             _dbContext.Notes.Remove(entity);
             await _dbContext.SaveChangesAsync(cancellationToken);
+            return;
         }
     }
 }
