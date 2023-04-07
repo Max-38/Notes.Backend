@@ -1,9 +1,14 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using Notes.Application;
 using Notes.Application.Common.Mappings;
 using Notes.Application.Interfaces;
 using Notes.Persistence;
+using Notes.WebApi;
 using Notes.WebApi.Middleware;
+using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Reflection;
 
 
@@ -40,7 +45,15 @@ builder.Services.AddAuthentication(config =>
                     options.Audience = "NotesWebApi";
                     options.RequireHttpsMetadata = false;
                 });
+
+builder.Services.AddVersionedApiExplorer(options => options.GroupNameFormat = "'v'VVV");
+builder.Services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
+builder.Services.AddSwaggerGen();
+builder.Services.AddApiVersioning();
+
+
 var app = builder.Build();
+var provider = app.Services.GetRequiredService<IApiVersionDescriptionProvider>();
 
 using (var scope = app.Services.CreateScope())
 {
@@ -62,12 +75,25 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+
+
+app.UseSwagger();
+app.UseSwaggerUI(config =>
+{
+    foreach (var description in provider.ApiVersionDescriptions)
+    {
+        config.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json",
+                               description.GroupName.ToUpperInvariant());
+        config.RoutePrefix = string.Empty;
+    }
+});
 app.UseCustomExceptionHandler();
 app.UseRouting();
 app.UseHttpsRedirection();
 app.UseCors("AllowAll");
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseApiVersioning();
 app.MapControllers();
 
 app.Run();
