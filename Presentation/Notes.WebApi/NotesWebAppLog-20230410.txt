@@ -1,0 +1,20 @@
+2023-04-10 21:26:17.480 +03:00 [INF] Executed DbCommand (151ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2023-04-10 21:26:27.400 +03:00 [INF] User profile is available. Using 'C:\Users\Макс\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-04-10 21:26:42.722 +03:00 [INF] Now listening on: https://localhost:7144
+2023-04-10 21:26:42.723 +03:00 [INF] Now listening on: http://localhost:5164
+2023-04-10 21:26:42.731 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-10 21:26:42.733 +03:00 [INF] Hosting environment: Development
+2023-04-10 21:26:42.733 +03:00 [INF] Content root path: C:\Users\Макс\source\repos\Notes.Backend\Presentation\Notes.WebApi\
+2023-04-10 21:30:00.560 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7144/index.html - -
+2023-04-10 21:30:16.139 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7144/_framework/aspnetcore-browser-refresh.js - -
+2023-04-10 21:30:16.404 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7144/index.html - - - 200 - text/html;charset=utf-8 15311.9381ms
+2023-04-10 21:30:16.874 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7144/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 735.0372ms
+2023-04-10 21:31:03.132 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7144/swagger/v1/swagger.json - -
+2023-04-10 21:31:03.809 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7144/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 676.9843ms
+2023-04-10 23:42:31.906 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7144/index.html - -
+2023-04-10 23:42:40.532 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7144/index.html - - - 200 - text/html;charset=utf-8 9328.1608ms
+2023-04-10 23:42:42.429 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7144/_framework/aspnetcore-browser-refresh.js - -
+2023-04-10 23:42:42.438 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7144/_framework/aspnetcore-browser-refresh.js - - - 200 11994 application/javascript;+charset=utf-8 8.1367ms
+2023-04-10 23:42:48.632 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7144/swagger/v1/swagger.json - -
+2023-04-10 23:42:55.231 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7144/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 6599.1240ms

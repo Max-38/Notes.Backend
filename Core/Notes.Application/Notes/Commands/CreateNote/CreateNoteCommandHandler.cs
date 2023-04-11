@@ -1,11 +1,6 @@
 ﻿using MediatR;
 using Notes.Application.Interfaces;
 using Notes.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Notes.Application.Notes.Commands.CreateNote
 {
