@@ -2,12 +2,6 @@
 using Notes.Application.Common.Exceptions;
 using Notes.Application.Notes.Commands.UpdateNote;
 using Notes.Tests.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Notes.Tests.Notes.Commands
 {
